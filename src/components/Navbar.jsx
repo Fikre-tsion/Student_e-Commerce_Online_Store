@@ -232,7 +232,11 @@ export default function Navbar() {
           <Typography variant="h6" sx={{ fontFamily: "serif", fontWeight: 700, color: SHETA_COLORS.obsidian }}>
             SHETA <span style={{ color: SHETA_COLORS.royalGold }}>(ሽታ)</span>
           </Typography>
-          <IconButton onClick={handleDrawerToggle} sx={{ color: SHETA_COLORS.obsidian }}>
+          <IconButton
+            aria-label="close navigation drawer"
+            onClick={handleDrawerToggle}
+            sx={{ color: SHETA_COLORS.obsidian }}
+          >
             <CloseIcon />
           </IconButton>
         </Box>

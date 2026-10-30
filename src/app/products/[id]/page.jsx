@@ -62,7 +62,7 @@ export default function ProductDetailPage() {
               Fragrance Not Found
             </Typography>
             <Typography variant="body1" sx={{ color: SHETA_COLORS.mutedSlate, mb: 4, lineHeight: 1.7 }}>
-              The requested perfume ID <code>"{productId}"</code> does not exist in our olfactory archive, or may have been retired.
+              The requested perfume ID <code>&quot;{productId}&quot;</code> does not exist in our olfactory archive, or may have been retired.
             </Typography>
             <Button
               component={Link}

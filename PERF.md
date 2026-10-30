@@ -62,25 +62,27 @@ This document reports the performance optimizations, architectural boundaries, C
 
 ---
 
-## 3. Core Web Vitals Before & After Improvements
+## 3. Core Web Vitals Measurement Record
 
-Honest measurements recorded across the shopping journey before optimization (unoptimized font requests, render-blocking `<link>` tags, dev mode) vs. after optimization (Next.js font self-hosting, CSS module inlining, MUI tree-shaking, production build):
+This repository records the measurement method, but it does not include a
+committed Lighthouse JSON export. The values below are intentionally marked as
+not recorded rather than presented as invented scores. Run Lighthouse against a
+production server and replace the table values with the observed results under
+the same device and network conditions.
+
+Start the production server with `npm run build && npm run start`, then test
+`/`, `/products`, `/products/<id>`, `/cart`, and `/checkout` in Chrome DevTools
+Lighthouse. Record the mobile and desktop profiles separately, including the
+LCP, CLS, and INP values and the date of each run.
 
 | Page Route | Metric | Before Optimization | After Optimization | Delta / Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Home (`/`)** | **LCP** (Largest Contentful Paint) | 3.4 s | **1.1 s** | **-67% (Good / Green)** |
-| | **CLS** (Cumulative Layout Shift) | 0.18 | **0.00** | **Zero Shift (Good / Green)** |
-| | **INP** (Interaction to Next Paint) | 120 ms | **30 ms** | **-75% (Fast / Green)** |
-| | **Overall Performance Score** | 40% (Dev / Blocking) | **92%+ (Production)** | **+52 pts** |
-| **Catalogue (`/products`)** | **LCP** | 2.8 s | **1.0 s** | **-64% (Good)** |
-| | **CLS** | 0.14 | **0.01** | **Good** |
-| | **INP** | 95 ms | **25 ms** | **Fast** |
-| **Product Detail (`/products/[id]`)**| **LCP** | 2.9 s | **0.9 s** | **-68% (Good)** |
-| | **CLS** | 0.08 | **0.00** | **Good** |
-| | **INP** | 80 ms | **22 ms** | **Fast** |
-| **Cart & Checkout (`/cart`, `/checkout`)**| **LCP** | 1.8 s | **0.8 s** | **-55% (Good)** |
-| | **CLS** | 0.04 | **0.00** | **Good** |
-| | **INP** | 65 ms | **18 ms** | **Fast** |
+| Page route | LCP | CLS | INP | Result |
+| :--- | :--- | :--- | :--- | :--- |
+| `/` | Not recorded | Not recorded | Not recorded | Run production Lighthouse |
+| `/products` | Not recorded | Not recorded | Not recorded | Run production Lighthouse |
+| `/products/<id>` | Not recorded | Not recorded | Not recorded | Run production Lighthouse |
+| `/cart` and `/checkout` | Not recorded | Not recorded | Not recorded | Run production Lighthouse |
 
 ---
 

@@ -381,7 +381,7 @@ export default function HomePage() {
           </Typography>
           <Typography variant="body1" sx={{ color: SHETA_COLORS.mutedSlate }}>
             We blend classical French haute perfumery methods with centuries-old botanical wisdom
-            from Ethiopia's sacred mountains and incense trade routes.
+            from Ethiopia&apos;s sacred mountains and incense trade routes.
           </Typography>
         </Box>
 

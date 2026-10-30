@@ -83,7 +83,7 @@ The application implements the complete 6-stage end-to-end shopping journey:
 
 ```text
 ONLINE_STORE/
-├── .env                      # Safe environment variable template
+├── .env.example              # Safe public environment variable template
 ├── .gitignore                # Git ignore rules for node_modules, .next, etc.
 ├── next.config.js            # Next.js config with remote image patterns & formats
 ├── package.json              # Project dependencies & scripts
@@ -130,23 +130,41 @@ ONLINE_STORE/
 ### 2. Installation
 ```bash
 # Clone the repository
-git clone <repo-url>
-cd ONLINE_STORE
+git clone https://github.com/Fikre-tsion/Student_e-Commerce_Online_Store.git
+cd Student_e-Commerce_Online_Store
 
 # Install dependencies
 npm install
 ```
 
-### 3. Run the Development Server
+### 3. Configure the environment (optional)
+```bash
+cp .env.example .env.local
+```
+
+Only public, non-secret values belong in `NEXT_PUBLIC_*` variables. Never commit
+`.env.local` or credentials.
+
+### 4. Run the Development Server
 ```bash
 npm run dev
 ```
 Open [http://localhost:3000](http://localhost:3000) in your browser to explore the store.
 
-### 4. Build for Production
+### 5. Build for Production
 ```bash
 npm run build
 npm run start
 ```
+
+### 6. Verify the customer journey
+
+- Browse and filter the catalogue, then open a product detail page.
+- Add multiple products, change quantities, remove an item, and verify the subtotal.
+- Open an empty cart and confirm the return-to-catalogue state.
+- Submit invalid and valid delivery forms; no payment details are collected.
+- Confirm the order summary and reference on the success page.
+- Check the journey at mobile and desktop widths.
+- Run `npm run build` before presenting the project.
 
 ---

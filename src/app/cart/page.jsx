@@ -84,7 +84,7 @@ export default function CartPage() {
                 lineHeight: 1.7
               }}
             >
-              You haven't selected any artisanal extraits yet. Explore our highland resins,
+              You haven&apos;t selected any artisanal extraits yet. Explore our highland resins,
               Damascene rose, and vanilla blends to find your signature fragrance.
             </Typography>
 
